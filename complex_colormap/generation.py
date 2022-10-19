@@ -61,7 +61,7 @@ def dist_to_wall(J, C, h):
     0
 
     """
-    if J == 0 or J == 100:
+    if J in [0, 100]:
         return 0
 
     r, g, b = cspace_convert((J, C, h), new_space, "sRGB1")
@@ -91,7 +91,7 @@ def find_wall(J, h):
     C : float
         Chroma, varies from 0 to 111 within the default RGB cube
     """
-    if J == 0 or J == 100:
+    if J in [0, 100]:
         return 0
 
     tol = 1/1000
